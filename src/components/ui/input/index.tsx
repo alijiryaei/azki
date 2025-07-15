@@ -1,7 +1,7 @@
-import type {InputHTMLAttributes, RefObject} from 'react';
+import type {InputHTMLAttributes} from 'react';
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-  ref?: RefObject<HTMLInputElement>;
+  ref?: React.Ref<HTMLInputElement>;
   error?: boolean;
   helperText?: string;
   errorText?: string;
@@ -27,7 +27,7 @@ const Input = ({
         <p className="px-4 text-xs text-gray-800">{helperText}</p>
       )}
       {errorText && error && (
-        <p className="px-4 text-xs text-red-600">{helperText}</p>
+        <p className="px-4 text-xs text-red-600">{errorText}</p>
       )}
     </div>
   );
