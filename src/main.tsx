@@ -3,11 +3,14 @@ import {createRoot} from 'react-dom/client';
 import {BrowserRouter} from 'react-router';
 import './index.css';
 import App from './App.tsx';
+import ReactQueryProvider from './providers/reactQueryProvider.tsx';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <ReactQueryProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </ReactQueryProvider>
   </StrictMode>,
 );

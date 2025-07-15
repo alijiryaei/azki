@@ -3,7 +3,7 @@ import type {InputHTMLAttributes} from 'react';
 interface SelectProps extends InputHTMLAttributes<HTMLSelectElement> {
   ref?: React.Ref<HTMLSelectElement>;
   label: string;
-  options: (string | number)[];
+  options?: (string | number)[];
   error?: boolean;
   errorText?: string;
 }
@@ -26,7 +26,7 @@ export const Select = ({
         <option hidden disabled selected value="">
           {label}
         </option>
-        {options.map(value => (
+        {options?.map(value => (
           <option value={value}>{value}</option>
         ))}
       </select>

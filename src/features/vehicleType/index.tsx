@@ -2,16 +2,21 @@ import {Controller} from 'react-hook-form';
 import {Select} from '../../components/ui/select';
 import {useVehicleTypeForm} from './hooks/useVehicleTypeForm';
 import {Button} from '../../components/ui/button';
+import {useVehicleTypes} from './hooks/useVehicleTypes';
+import {useNavigate} from 'react-router';
 
 export const VehicleType = () => {
-  const {control, handleSubmit, errors, onSubmit} = useVehicleTypeForm();
+  const navigate = useNavigate();
+  const {control, handleSubmit, errors, onSubmit, selectedType} =
+    useVehicleTypeForm(navigate);
+  const {vehicleTypesData, vehicleUsages} = useVehicleTypes(selectedType);
   return (
     <div className="w-full">
       <h1 className="mb-6 text-center text-2xl font-bold text-gray-800">
         بیمه شخص ثالث
       </h1>
       <form className="flex flex-col" onSubmit={handleSubmit(onSubmit)}>
-        <div className="flex flex-col gap-4 md:flex-row">
+        <div className="flex flex-col gap-4 md:flex-row-reverse">
           <Controller
             name="vehicleType"
             control={control}
@@ -24,7 +29,7 @@ export const VehicleType = () => {
                   label="نوع خودرو"
                   error={!!errors.vehicleType}
                   errorText={errors.vehicleType?.message}
-                  options={['hello', 'ali']}
+                  options={vehicleTypesData!}
                   {...field}
                 />
               );
@@ -33,6 +38,7 @@ export const VehicleType = () => {
           <Controller
             control={control}
             name="vehicleUsage"
+            disabled={selectedType == ''}
             rules={{
               required: 'انتخاب مدل خودرو الزامی است',
             }}
@@ -41,15 +47,20 @@ export const VehicleType = () => {
                 label="مدل خودرو"
                 error={!!errors.vehicleUsage}
                 errorText={errors.vehicleUsage?.message}
-                options={['hello', 'ali']}
+                options={vehicleUsages!}
                 {...field}
               />
             )}
           />
         </div>
-        <Button type="submit" variant="outlined">
-          بعدی
-        </Button>
+        <div className="flex w-full justify-between">
+          <Button type="submit" variant="outlined">
+            مرحله بعد
+          </Button>
+          <Button onClick={() => navigate(-1)} variant="outlined">
+            مرحله قبل
+          </Button>
+        </div>
       </form>
     </div>
   );
