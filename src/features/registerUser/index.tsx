@@ -1,6 +1,7 @@
 import {Controller} from 'react-hook-form';
 import Input from '../../components/ui/input';
 import {useRegisterForm} from './hooks/useRegisterForm';
+import {Button} from '../../components/ui/button';
 
 export const RegisterUser = () => {
   const {control, errors, handleSubmit, onSubmit} = useRegisterForm();
@@ -102,12 +103,7 @@ export const RegisterUser = () => {
             }}
           />
           <div className="text-center">
-            <button
-              type="submit"
-              className="rounded bg-emerald-500 px-6 py-2 font-bold text-white transition duration-200 hover:bg-emerald-600"
-            >
-              ثبت نام
-            </button>
+            <Button type="submit">ثبت نام</Button>
           </div>
         </form>
       </div>

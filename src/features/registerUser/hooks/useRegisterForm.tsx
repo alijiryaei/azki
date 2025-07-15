@@ -1,4 +1,5 @@
 import {useForm, type SubmitHandler} from 'react-hook-form';
+import {useNavigate} from 'react-router';
 
 type RegisterUserForm = {
   firstName: string;
@@ -8,6 +9,7 @@ type RegisterUserForm = {
 };
 
 export const useRegisterForm = () => {
+  const navigate = useNavigate();
   const {
     control,
     formState: {errors},
@@ -21,8 +23,8 @@ export const useRegisterForm = () => {
     },
   });
 
-  const onSubmit: SubmitHandler<RegisterUserForm> = data => {
-    alert(data);
+  const onSubmit: SubmitHandler<RegisterUserForm> = () => {
+    navigate('/insurance');
   };
 
   return {
