@@ -13,11 +13,17 @@ const VARIANTS_STYLES: {[key in ButtonVariants]: string} = {
   outlined: "border border-emerald-500 text-emerald-500 hover:bg-emerald-50'",
 };
 
-export const Button = ({ref, children, variant = 'filled'}: ButtonProps) => {
+export const Button = ({
+  ref,
+  children,
+  variant = 'filled',
+  ...otherProps
+}: ButtonProps) => {
   return (
     <button
       ref={ref}
       className={`${VARIANTS_STYLES[variant]} rounded-full px-9 py-2 transition duration-200`}
+      {...otherProps}
     >
       {children}
     </button>
