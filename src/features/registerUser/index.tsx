@@ -6,12 +6,15 @@ import {Button} from '../../components/ui/button';
 export const RegisterUser = () => {
   const {control, errors, handleSubmit, onSubmit} = useRegisterForm();
   return (
-    <div className="flex min-h-screen w-full justify-center px-4 pt-5 font-sans">
-      <div className="w-full max-w-md rounded-xl p-8">
-        <h1 className="mb-6 text-center text-2xl font-bold text-gray-800">
-          ثبت نام
-        </h1>
-        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-2">
+    <div className="w-full max-w-md rounded-xl p-8 px-4 pt-5">
+      <h1 className="mb-6 text-center text-2xl font-bold text-gray-800">
+        ثبت نام
+      </h1>
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="flex flex-col space-y-2"
+      >
+        <div className="flex flex-col gap-2 md:flex-row-reverse">
           <Controller
             control={control}
             name="firstName"
@@ -50,63 +53,63 @@ export const RegisterUser = () => {
               />
             )}
           />
-          <Controller
-            control={control}
-            name="phoneNumber"
-            rules={{
-              required: 'شماره الزامیست',
-              pattern: {
-                value: /^09\d{9}$/,
-                message: 'شماره با ۰۹ آغاز میشود',
-              },
-              minLength: {
-                value: 11,
-                message: 'شماره حداقل ۱۱ کاراکتر دارد',
-              },
-            }}
-            render={({field}) => (
+        </div>
+        <Controller
+          control={control}
+          name="phoneNumber"
+          rules={{
+            required: 'شماره الزامیست',
+            pattern: {
+              value: /^09\d{9}$/,
+              message: 'شماره با ۰۹ آغاز میشود',
+            },
+            minLength: {
+              value: 11,
+              message: 'شماره حداقل ۱۱ کاراکتر دارد',
+            },
+          }}
+          render={({field}) => (
+            <Input
+              placeholder="شماره موبایل"
+              inputMode="numeric"
+              maxLength={11}
+              error={!!errors.phoneNumber}
+              errorText={errors.phoneNumber?.message}
+              {...field}
+            />
+          )}
+        />
+        <Controller
+          control={control}
+          name="password"
+          rules={{
+            pattern: {
+              value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/,
+              message: 'حداقل ۱ حروف کوچک و بزرگ لاتین و عدد الزامی است',
+            },
+            minLength: {
+              value: 4,
+              message: 'طول رمز عبور حداقل باید ۴ کاراکتر باشد',
+            },
+            required: 'رمز عبور اجباریست',
+          }}
+          render={({field}) => {
+            return (
               <Input
-                placeholder="شماره موبایل"
-                inputMode="numeric"
-                maxLength={11}
-                error={!!errors.phoneNumber}
-                errorText={errors.phoneNumber?.message}
+                type="password"
+                maxLength={10}
+                placeholder="رمز عبور"
+                error={!!errors.password}
+                errorText={errors.password?.message}
                 {...field}
               />
-            )}
-          />
-          <Controller
-            control={control}
-            name="password"
-            rules={{
-              pattern: {
-                value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/,
-                message: 'حداقل ۱ حروف کوچک و بزرگ لاتین و عدد الزامی است',
-              },
-              minLength: {
-                value: 4,
-                message: 'طول رمز عبور حداقل باید ۴ کاراکتر باشد',
-              },
-              required: 'رمز عبور اجباریست',
-            }}
-            render={({field}) => {
-              return (
-                <Input
-                  type="password"
-                  maxLength={10}
-                  placeholder="رمز عبور"
-                  error={!!errors.password}
-                  errorText={errors.password?.message}
-                  {...field}
-                />
-              );
-            }}
-          />
-          <div className="text-center">
-            <Button type="submit">ثبت نام</Button>
-          </div>
-        </form>
-      </div>
+            );
+          }}
+        />
+        <div className="text-center">
+          <Button type="submit">ثبت نام</Button>
+        </div>
+      </form>
     </div>
   );
 };

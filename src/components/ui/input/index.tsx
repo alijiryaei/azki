@@ -16,7 +16,7 @@ const Input = ({
   ...otherProps
 }: InputProps) => {
   return (
-    <div dir="rtl" className="h-16">
+    <div dir="rtl" className="h-16 w-full">
       <input
         type={type}
         className={`mb-1 w-full rounded border ${error ? 'border-red-600 focus:ring-red-500' : 'border-gray-400'}  px-4 py-2 focus:outline-none focus:ring-1 focus:ring-emerald-500`}
