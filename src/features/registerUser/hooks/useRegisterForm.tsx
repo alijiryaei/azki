@@ -24,7 +24,7 @@ export const useRegisterForm = () => {
   });
 
   const onSubmit: SubmitHandler<RegisterUserForm> = () => {
-    navigate('/insurance');
+    navigate('/insurances');
   };
 
   return {
