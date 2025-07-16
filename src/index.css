@@ -17,6 +17,7 @@ body {
   color: theme(--color-gray-800);
   background-color: theme(--color-gray-100);
   font-family: dana, serif;
+  height: 100%;
 }
 
 * {
