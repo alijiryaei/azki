@@ -6,7 +6,7 @@ type DiscountsModel = {
 }[];
 export const getDiscounts = async () => {
   const {data}: {data: DiscountsModel} = await request.get(
-    'product/third/third-discounts',
+    'third/third-discounts',
   );
 
   return data;

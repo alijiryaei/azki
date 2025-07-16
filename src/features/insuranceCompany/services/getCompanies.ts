@@ -8,7 +8,7 @@ type CompaniesModel = {
 
 export const getCompanies = async () => {
   const {data}: {data: CompaniesModel} = await request.get(
-    'product/third/companies',
+    'third/companies',
   );
   return data;
 };

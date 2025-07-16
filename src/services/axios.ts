@@ -1,7 +1,7 @@
 import Axios, {type AxiosRequestConfig, type AxiosResponse} from 'axios';
 import appendFormData, {type FormData} from '../utils/appendFormData';
 
-const BASE_URL = 'https://www.azki.com/api/';
+const BASE_URL = 'https://www.azki.com/api/product/';
 
 export const api = Axios.create({
   baseURL: BASE_URL,

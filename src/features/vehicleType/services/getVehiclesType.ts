@@ -13,7 +13,7 @@ type VehicleTypeModel = {
 
 export const getVehicleTypes = async () => {
   const {data}: {data: VehicleTypeModel} = await request.get(
-    'product/vehicle/types',
+    'vehicle/types',
   );
 
   return data;
