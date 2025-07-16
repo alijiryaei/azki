@@ -25,8 +25,8 @@ const initialState = {
   },
   insuranceCompany: '',
   discount: {
-    thirdPartyDiscount: 0,
-    driverDiscount: 0,
+    thirdPartyDiscount: '',
+    driverDiscount: '',
   },
 };
 
