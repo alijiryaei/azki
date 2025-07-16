@@ -1,9 +1,22 @@
 import {createContext, useContext, useState, type ReactNode} from 'react';
+
+const userData = sessionStorage.getItem('userData');
+const parseUserData = (data: string) => {
+  const {firstName, lastName} = JSON.parse(data) as {
+    firstName: string;
+    lastName: string;
+  };
+  return {
+    firstName,
+    lastName,
+  };
+};
+
 const initialState = {
   userData: {
     phoneNumber: '',
-    firstName: '',
-    lastName: '',
+    firstName: userData ? parseUserData(userData).firstName : '',
+    lastName: userData ? parseUserData(userData).lastName : '',
   },
   insuranceType: '',
   vehicle: {
