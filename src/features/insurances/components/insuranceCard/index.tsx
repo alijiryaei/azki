@@ -19,7 +19,7 @@ export const InsuranceCard = ({
       }}
     >
       <img className={`h-10 w-10 ${isActive}`} src={insuranceSvg} />
-      <p>{title}</p>
+      <p className="text-xs font-semibold">{title}</p>
     </div>
   );
 };

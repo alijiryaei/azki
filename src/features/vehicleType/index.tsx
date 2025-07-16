@@ -11,57 +11,52 @@ export const VehicleType = () => {
     useVehicleTypeForm(navigate);
   const {vehicleTypesData, vehicleUsages} = useVehicleTypes(selectedType);
   return (
-    <div className="w-full">
-      <h1 className="mb-6 text-center text-2xl font-bold text-gray-800">
-        بیمه شخص ثالث
-      </h1>
-      <form className="flex flex-col" onSubmit={handleSubmit(onSubmit)}>
-        <div className="flex flex-col gap-4 md:flex-row-reverse">
-          <Controller
-            name="vehicleType"
-            control={control}
-            rules={{
-              required: 'انتخاب نوع خودرو الزامی است',
-            }}
-            render={({field}) => {
-              return (
-                <Select
-                  label="نوع خودرو"
-                  error={!!errors.vehicleType}
-                  errorText={errors.vehicleType?.message}
-                  options={vehicleTypesData!}
-                  {...field}
-                />
-              );
-            }}
-          />
-          <Controller
-            control={control}
-            name="vehicleUsage"
-            disabled={selectedType == ''}
-            rules={{
-              required: 'انتخاب مدل خودرو الزامی است',
-            }}
-            render={({field}) => (
+    <form className="flex flex-col" onSubmit={handleSubmit(onSubmit)}>
+      <div className="mb-4 flex flex-col gap-4 md:flex-row-reverse">
+        <Controller
+          name="vehicleType"
+          control={control}
+          rules={{
+            required: 'انتخاب نوع خودرو الزامی است',
+          }}
+          render={({field}) => {
+            return (
               <Select
-                label="مدل خودرو"
-                error={!!errors.vehicleUsage}
-                errorText={errors.vehicleUsage?.message}
-                options={vehicleUsages!}
+                label="نوع خودرو"
+                error={!!errors.vehicleType}
+                errorText={errors.vehicleType?.message}
+                options={vehicleTypesData!}
                 {...field}
               />
-            )}
-          />
-        </div>
-        <div className="flex w-full justify-between">
-          <Button type="submit" variant="outlined">
-            مرحله بعد
-          </Button>
-          <Button onClick={() => navigate(-1)} variant="outlined">
-            مرحله قبل
-          </Button>
-        </div>
-      </form>
-    </div>
+            );
+          }}
+        />
+        <Controller
+          control={control}
+          name="vehicleUsage"
+          disabled={selectedType == ''}
+          rules={{
+            required: 'انتخاب مدل خودرو الزامی است',
+          }}
+          render={({field}) => (
+            <Select
+              label="مدل خودرو"
+              error={!!errors.vehicleUsage}
+              errorText={errors.vehicleUsage?.message}
+              options={vehicleUsages!}
+              {...field}
+            />
+          )}
+        />
+      </div>
+      <div className="flex w-full justify-between">
+        <Button type="submit" variant="outlined">
+          مرحله بعد
+        </Button>
+        <Button onClick={() => navigate(-1)} variant="outlined">
+          مرحله قبل
+        </Button>
+      </div>
+    </form>
   );
 };
