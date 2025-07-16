@@ -5,9 +5,12 @@ export const Insurances = () => {
   const {handleInsuranceClick} = useInsurances();
   return (
     <div className="flex w-full flex-row-reverse gap-4">
-      <InsuranceCard onClick={handleInsuranceClick} title="شخص ثالث" />
       <InsuranceCard
-        onClick={handleInsuranceClick}
+        onClick={() => handleInsuranceClick('شخص ثالث')}
+        title="شخص ثالث"
+      />
+      <InsuranceCard
+        onClick={() => handleInsuranceClick('بدنه')}
         title="بدنه"
         isActive={false}
       />

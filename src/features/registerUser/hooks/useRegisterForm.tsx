@@ -1,5 +1,6 @@
 import {useForm, type SubmitHandler} from 'react-hook-form';
 import {useNavigate} from 'react-router';
+import {useAppContext} from '../../../providers/userAppProvider';
 
 type RegisterUserForm = {
   firstName: string;
@@ -9,6 +10,7 @@ type RegisterUserForm = {
 };
 
 export const useRegisterForm = () => {
+  const {updateData} = useAppContext();
   const navigate = useNavigate();
   const {
     control,
@@ -23,7 +25,18 @@ export const useRegisterForm = () => {
     },
   });
 
-  const onSubmit: SubmitHandler<RegisterUserForm> = () => {
+  const onSubmit: SubmitHandler<RegisterUserForm> = ({
+    lastName,
+    firstName,
+    phoneNumber,
+  }) => {
+    const user = {
+      lastName,
+      firstName,
+      phoneNumber,
+    };
+    updateData('userData', user);
+    sessionStorage.setItem('userData', JSON.stringify(user));
     navigate('/insurances');
   };
 

@@ -7,10 +7,11 @@ import {Button} from '../../components/ui/button';
 
 export const InsuranceCompany = () => {
   const navigate = useNavigate();
-  const {control, errors, handleSubmit} = useInsuranceCompanyForm();
+  const {control, errors, handleSubmit, onSubmit} =
+    useInsuranceCompanyForm(navigate);
   const {insuranceCompaniesData} = useCompaniesData();
   return (
-    <form className="flex flex-col gap-4" onSubmit={handleSubmit(() => null)}>
+    <form className="flex flex-col gap-4" onSubmit={handleSubmit(onSubmit)}>
       <Controller
         name="company"
         control={control}

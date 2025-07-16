@@ -1,5 +1,6 @@
 import {useForm, type SubmitHandler} from 'react-hook-form';
 import type {NavigateFunction} from 'react-router';
+import {useAppContext} from '../../../providers/userAppProvider';
 
 type VehicleTypeForm = {
   vehicleType: string;
@@ -7,6 +8,7 @@ type VehicleTypeForm = {
 };
 
 export const useVehicleTypeForm = (navigate: NavigateFunction) => {
+  const {updateData} = useAppContext();
   const {
     control,
     formState: {errors},
@@ -19,7 +21,11 @@ export const useVehicleTypeForm = (navigate: NavigateFunction) => {
     },
   });
 
-  const onSubmit: SubmitHandler<VehicleTypeForm> = () => {
+  const onSubmit: SubmitHandler<VehicleTypeForm> = data => {
+    updateData('vehicle', {
+      vehicleType: data.vehicleType,
+      vehicleUsage: data.vehicleUsage,
+    });
     navigate('/insuranceCompany');
   };
 
