@@ -1,77 +1,60 @@
-# React + TypeScript + Vite
+# 💸 Azki App
 
-This template provides a minimal setup to get React working in Vite with HMR and
-some ESLint rules.
+A blazing-fast and modern front-end project starter powered by:
 
-Currently, two official plugins are available:
+- ⚡️ [Vite](https://vitejs.dev/)
+- 💅 [Tailwind CSS](https://tailwindcss.com/)
+- 🔍 [React Query](https://tanstack.com/query/latest)
+- 🧠 [TypeScript](https://www.typescriptlang.org/)
+- ⚛️ [React](https://reactjs.org/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react)
-  uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc)
-  uses [SWC](https://swc.rs/) for Fast Refresh
+## 📦 Features
 
-## Expanding the ESLint configuration
+- Scalable project structure
+- Fully typed with TypeScript
+- Data fetching & caching with React Query
+- Utility-first styling with Tailwind CSS
+- Vite's lightning-fast dev server and build setup
+- ESLint & Prettier configured for code quality
 
-If you are developing a production application, we recommend updating the
-configuration to enable type-aware lint rules:
+## 📁 Project Structure
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+```
+📦 src/
+├── 📂 assets/            # Static images, fonts, or icons
+├── 📂 components/        # Reusable UI components (Buttons, Inputs, etc.)
+│   └── 📂 layout/        # App layout components (Navbar, Sidebar, etc.)
+├── 📂 features/          # Feature-specific components, hooks, and queries
+│   └── 📂 registerUser/  # Example feature module (register user)
+│       ├── index.tsx
+│       ├── 📂 hooks
+│       ├── 📂 components
+│       └── 📂 services
+├── 📂 hooks/             # Global custom hooks
+├── 📂 utils/             # Utility functions, config, and third-party setup
+├── 📂 pages/             # Route-based components (Home, About, etc.)
+├── 📂 services/          # API clients
+├── App.tsx              # Root component
+├── main.tsx             # Vite entry point
+└── index.css            # Tailwind directives and global styles
 ```
 
-You can also install
-[eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x)
-and
-[eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom)
-for React-specific lint rules:
+## 🛠️ Installation
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x';
-import reactDom from 'eslint-plugin-react-dom';
+```bash
+git clone git@github.com:alijiryaei/azki.git
+cd your-repo-name
+npm install
+```
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+## 🚀 Development
+
+```bash
+npm run dev
+```
+
+## 📦 Production Build
+
+```bash
+npm run build
 ```
