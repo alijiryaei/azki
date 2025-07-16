@@ -1,9 +1,9 @@
 import {Controller} from 'react-hook-form';
 import {useDiscountsForm} from './hooks/useDiscountsForm';
-import {Select} from '../../components/ui/select';
+import {Select} from '@/components/ui/select';
 import {useDiscountsData} from './hooks/useDiscountsData';
-import {Button} from '../../components/ui/button';
-import Modal from '../../components/ui/modal';
+import {Button} from '@/components/ui/button';
+import Modal from '@/components/ui/modal';
 import {DataSummary} from './components/dataSummary';
 
 export const Discount = () => {

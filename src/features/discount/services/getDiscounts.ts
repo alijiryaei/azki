@@ -1,4 +1,4 @@
-import request from '../../../services/axios';
+import request from '@/services/axios';
 
 type DiscountsModel = {
   id: number;

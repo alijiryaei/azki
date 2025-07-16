@@ -1,7 +1,7 @@
 import {Controller} from 'react-hook-form';
-import {Select} from '../../components/ui/select';
+import {Select} from '@/components/ui/select';
 import {useVehicleTypeForm} from './hooks/useVehicleTypeForm';
-import {Button} from '../../components/ui/button';
+import {Button} from '@/components/ui/button';
 import {useVehicleTypes} from './hooks/useVehicleTypes';
 import {useNavigate} from 'react-router';
 

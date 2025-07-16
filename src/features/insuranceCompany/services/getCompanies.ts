@@ -1,4 +1,4 @@
-import request from '../../../services/axios';
+import request from '@/services/axios';
 
 type CompaniesModel = {
   available: boolean;
@@ -7,8 +7,6 @@ type CompaniesModel = {
 }[];
 
 export const getCompanies = async () => {
-  const {data}: {data: CompaniesModel} = await request.get(
-    'third/companies',
-  );
+  const {data}: {data: CompaniesModel} = await request.get('third/companies');
   return data;
 };

@@ -1,5 +1,5 @@
 import {useForm, type SubmitHandler} from 'react-hook-form';
-import {useAppContext} from '../../../providers/userAppProvider';
+import {useAppContext} from '@/providers/userAppProvider';
 import {type NavigateFunction} from 'react-router';
 
 export const useInsuranceCompanyForm = (navigate: NavigateFunction) => {

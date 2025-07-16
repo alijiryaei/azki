@@ -1,4 +1,4 @@
-import insuranceSvg from '../../../../assets/insurance.svg';
+import insuranceSvg from '@/assets/insurance.svg';
 
 interface InsuranceCardProps {
   isActive?: boolean;

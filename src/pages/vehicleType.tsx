@@ -1,4 +1,4 @@
-import {VehicleType} from '../features/vehicleType';
+import {VehicleType} from '@/features/vehicleType';
 
 export const VehicleTypePage = () => {
   return (

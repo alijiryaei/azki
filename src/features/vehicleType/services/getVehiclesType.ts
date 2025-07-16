@@ -1,4 +1,4 @@
-import request from '../../../services/axios';
+import request from '@/services/axios';
 
 type VehicleTypeUsage = {
   id: number;
@@ -12,9 +12,7 @@ type VehicleTypeModel = {
 }[];
 
 export const getVehicleTypes = async () => {
-  const {data}: {data: VehicleTypeModel} = await request.get(
-    'vehicle/types',
-  );
+  const {data}: {data: VehicleTypeModel} = await request.get('vehicle/types');
 
   return data;
 };

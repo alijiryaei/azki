@@ -1,4 +1,4 @@
-import {InsuranceCompany} from '../features/insuranceCompany';
+import {InsuranceCompany} from '@/features/insuranceCompany';
 
 export const InsuranceCompanyPage = () => {
   return (

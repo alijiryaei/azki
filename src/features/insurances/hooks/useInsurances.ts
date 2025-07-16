@@ -1,5 +1,5 @@
 import {useNavigate} from 'react-router';
-import {useAppContext} from '../../../providers/userAppProvider';
+import {useAppContext} from '@/providers/userAppProvider';
 
 export const useInsurances = () => {
   const {updateData} = useAppContext();

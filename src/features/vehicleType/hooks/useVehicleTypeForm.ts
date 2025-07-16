@@ -1,6 +1,6 @@
 import {useForm, type SubmitHandler} from 'react-hook-form';
 import type {NavigateFunction} from 'react-router';
-import {useAppContext} from '../../../providers/userAppProvider';
+import {useAppContext} from '@/providers/userAppProvider';
 
 type VehicleTypeForm = {
   vehicleType: string;

@@ -1,4 +1,4 @@
-import {useAppContext} from '../../../../providers/userAppProvider';
+import {useAppContext} from '@/providers/userAppProvider';
 
 export const DataSummary = () => {
   const {data} = useAppContext();

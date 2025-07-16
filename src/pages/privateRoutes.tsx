@@ -1,5 +1,5 @@
 import {Navigate, Outlet} from 'react-router';
-import {useAppContext} from '../providers/userAppProvider';
+import {useAppContext} from '@/providers/userAppProvider';
 
 export const PrivateRoutes = () => {
   const {

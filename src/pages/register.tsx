@@ -1,4 +1,4 @@
-import {RegisterUser} from '../features/registerUser';
+import {RegisterUser} from '@/features/registerUser';
 export const RegisterPage = () => {
   return (
     <div className="w-full max-w-md">

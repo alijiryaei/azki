@@ -1,7 +1,7 @@
 import {Controller} from 'react-hook-form';
-import Input from '../../components/ui/input';
+import Input from '@/components/ui/input';
 import {useRegisterForm} from './hooks/useRegisterForm';
-import {Button} from '../../components/ui/button';
+import {Button} from '@/components/ui/button';
 
 export const RegisterUser = () => {
   const {control, errors, handleSubmit, onSubmit} = useRegisterForm();

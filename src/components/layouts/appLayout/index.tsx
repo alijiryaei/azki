@@ -1,5 +1,5 @@
 import {Outlet} from 'react-router';
-import carImage from '../../../assets/car-green.svg';
+import carImage from '@/assets/car-green.svg';
 import {NavBar} from '../navbar';
 
 export const AppLayout = () => {

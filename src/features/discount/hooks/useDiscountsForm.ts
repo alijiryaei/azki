@@ -1,5 +1,5 @@
 import {useForm, type SubmitHandler} from 'react-hook-form';
-import {useAppContext} from '../../../providers/userAppProvider';
+import {useAppContext} from '@/providers/userAppProvider';
 import {useState} from 'react';
 
 type DiscountsForm = {

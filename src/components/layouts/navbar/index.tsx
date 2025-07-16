@@ -1,5 +1,5 @@
-import logo from '../../../assets/logo.svg';
-import {useAppContext} from '../../../providers/userAppProvider';
+import logo from '@/assets/logo.svg';
+import {useAppContext} from '@/providers/userAppProvider';
 
 export const NavBar = () => {
   const {data} = useAppContext();

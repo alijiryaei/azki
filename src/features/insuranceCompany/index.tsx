@@ -1,9 +1,9 @@
 import {Controller} from 'react-hook-form';
 import {useCompaniesData} from './hooks/useCompaniesData';
 import {useInsuranceCompanyForm} from './hooks/useInsuranceCompanyForm';
-import {Select} from '../../components/ui/select';
+import {Select} from '@/components/ui/select';
 import {useNavigate} from 'react-router';
-import {Button} from '../../components/ui/button';
+import {Button} from '@/components/ui/button';
 
 export const InsuranceCompany = () => {
   const navigate = useNavigate();
