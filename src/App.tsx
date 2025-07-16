@@ -13,6 +13,7 @@ function App() {
     <Routes>
       <Route element={<AppLayout />}>
         <Route element={<PrivateRoutes />}>
+          <Route path="/"  />
           <Route path="/insurances" element={<InsurancesPage />} />
           <Route path="/vehicleType" element={<VehicleTypePage />} />
           <Route path="/insuranceCompany" element={<InsuranceCompanyPage />} />
